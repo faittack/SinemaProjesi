@@ -1,0 +1,192 @@
+﻿<Window x:Class="SinemaProjesi.AdminFilmUpdate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinemaProjesi"
+        mc:Ignorable="d"
+        Title="AdminFilmUpdate"
+        Height="450"
+        Width="800"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="Transparent"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resimler/movie.png">
+    
+    <Canvas Width="800"
+            Height="400">
+        <Canvas.Effect>
+            <DropShadowEffect Opacity="0.3"
+                              ShadowDepth="3" />
+        </Canvas.Effect>
+        <Border Background="White"
+                CornerRadius="20"
+                Width="600"
+                Height="350"
+                Canvas.Left="103"
+                Canvas.Top="25">
+            <Border Background="#FFF58307"
+                    CornerRadius="20,20,0,0"
+                    VerticalAlignment="Top"
+                    Width="600"
+                    Height="50">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.2"
+                                      BlurRadius="2"
+                                      ShadowDepth="3" />
+                </Border.Effect>
+                <Button Style="{StaticResource menuButton}"
+                        Background="Transparent"
+                        Height="Auto"
+                        Margin="550,8,15,8"
+                        Click="Geri">
+                    <iconPacks:PackIconMaterial Kind="ArrowLeftBoldCircleOutline"
+                                                Width="30"
+                                                Height="30"
+                                                Foreground="White"
+                                                BorderThickness="1" />
+                </Button>
+
+
+
+            </Border>
+
+
+        </Border>
+
+        <Label Content="Film Adı:"
+               Canvas.Left="180"
+               Canvas.Top="140"
+               FontFamily="Helvetica"
+               FontSize="15" />
+
+        <TextBox x:Name="FilmAdi_Txt"
+                 FontFamily="Helvetica"
+                 FontWeight="Light"
+                 FontSize="16"
+                 HorizontalAlignment="Center"
+                 Foreground="#FFF58307"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 Width="100"
+                 HorizontalContentAlignment="Left"
+                 Opacity="0.5"
+                 Height="25"
+                 Canvas.Left="305"
+                 Canvas.Top="140" />
+
+        <Label Content="Film Yılı:"
+               Canvas.Left="180"
+               Canvas.Top="175"
+               FontFamily="Helvetica"
+               FontSize="15" />
+        <TextBox x:Name="FilmYili_Txt"
+                 PreviewTextInput="NumberValidationTextBox"
+                 FontFamily="Helvetica"
+                 FontWeight="Light"
+                 FontSize="16"
+                 HorizontalAlignment="Center"
+                 Foreground="#FFF58307"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 Width="100"
+                 HorizontalContentAlignment="Left"
+                 Opacity="0.5"
+                 Height="25"
+                 Canvas.Left="305"
+                 Canvas.Top="175" />
+        <Label Content="Film Türü:"
+               Canvas.Left="180"
+               Canvas.Top="210"
+               FontFamily="Helvetica"
+               FontSize="15" />
+        <ComboBox Canvas.Left="305"
+                  Foreground="#FFF58307"
+                  Canvas.Top="210"
+                  x:Name="FilmTuru_CmdBx"
+                  Width="100"
+                  Style="{DynamicResource ComboBoxFlatStyle}"
+                  BorderThickness="0"
+                  Height="25">
+
+            <ComboBoxItem Content="Aksiyon" />
+            <ComboBoxItem Content="Dram" />
+            <ComboBoxItem Content="Bilim Kurgu" />
+            <ComboBoxItem Content="Gerilim" />
+            <ComboBoxItem Content="Romantik" />
+            <ComboBoxItem Content="Komedi" />
+            <ComboBoxItem Content="Fantastik" />
+        </ComboBox>
+        <Label Content="Film IMDB:"
+               Canvas.Left="180"
+               Canvas.Top="245"
+               FontFamily="Helvetica"
+               FontSize="15" />
+
+        <ComboBox Canvas.Left="305"
+                  x:Name="FilmIMDB_CmdBx"
+                  Foreground="#FFF58307"
+                  Canvas.Top="245"
+                  Width="100"
+                  Style="{DynamicResource ComboBoxFlatStyle}"
+                  BorderThickness="0"
+                  Height="25">
+
+            <ComboBoxItem Content="1" />
+            <ComboBoxItem Content="2" />
+            <ComboBoxItem Content="3" />
+            <ComboBoxItem Content="4" />
+            <ComboBoxItem Content="5" />
+            <ComboBoxItem Content="6" />
+            <ComboBoxItem Content="7" />
+            <ComboBoxItem Content="8" />
+            <ComboBoxItem Content="9" />
+            <ComboBoxItem Content="10" />
+
+
+
+
+        </ComboBox>
+        <Label Content="Film Yönetmeni:"
+               Canvas.Left="180"
+               Canvas.Top="280"
+               FontFamily="Helvetica"
+               FontSize="15" />
+        <TextBox FontFamily="Helvetica"
+                 x:Name="FilmYon_Txt"
+                 FontWeight="Light"
+                 FontSize="16"
+                 HorizontalAlignment="Center"
+                 Foreground="#FFF58307"
+                 Background="Transparent"
+                 BorderThickness="0"
+                 Width="100"
+                 HorizontalContentAlignment="Left"
+                 VerticalAlignment="Center"
+                 Opacity="0.5"
+                 Height="25"
+                 Canvas.Left="305"
+                 Canvas.Top="280" />
+
+        <Button Style="{StaticResource AddBtnStyl }"
+                Background="#FFF58307"
+                x:Name="Home"
+                Width="120"
+                Canvas.Left="550"
+                Margin="0"
+                Canvas.Top="300"
+                Click="UpdateBtnClick">
+            <iconPacks:PackIconMaterial Kind="MovieCheck"
+                                        Width="30"
+                                        Height="30"
+                                        Foreground="#FFFEFEFE"
+                                        BorderThickness="0.1" />
+        </Button>
+
+    </Canvas>
+  
+</Window>

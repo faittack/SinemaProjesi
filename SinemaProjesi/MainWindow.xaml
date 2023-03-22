@@ -1,0 +1,318 @@
+﻿<Window x:Class="SinemaProjesi.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SinemaProjesi"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Height="550"
+        Width="380"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Icon="Resimler/movie.png">
+
+
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+
+
+            <Border CornerRadius="20"
+                    Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color=" #FFFEFEFE"
+                                      Offset="0" />
+                        <GradientStop Color="#FFF58307"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Grid HorizontalAlignment="Left"
+                      Height="50"
+                      Margin="330,0,0,0"
+                      VerticalAlignment="Top"
+                      Width="50">
+                    <iconPacks:PackIconMaterial Kind="CloseCircle"
+                                                MouseLeftButtonDown="Exit">
+                        <iconPacks:PackIconMaterial.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              Opacity="0.2"
+                                              ShadowDepth="1" />
+                        </iconPacks:PackIconMaterial.Effect>
+
+                        <iconPacks:PackIconMaterial.Style>
+
+                            <Style TargetType="iconPacks:PackIconMaterial">
+                                <Setter Property="Foreground"
+                                        Value="White" />
+                                <Setter Property="Height"
+                                        Value="30" />
+                                <Setter Property="Width"
+                                        Value="30" />
+                                <Setter Property="VerticalAlignment"
+                                        Value="Center" />
+                                <Setter Property="HorizontalAlignment"
+                                        Value="Center" />
+
+                                <Style.Triggers>
+
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+
+                                        <Setter Property="Height"
+                                                Value="31" />
+                                        <Setter Property="Width"
+                                                Value="31" />
+                                        <Setter Property="Foreground"
+                                                Value="Red" />
+
+                                    </Trigger>
+
+                                </Style.Triggers>
+
+                            </Style>
+
+                        </iconPacks:PackIconMaterial.Style>
+
+                    </iconPacks:PackIconMaterial>
+
+                </Grid>
+
+            </Border>
+
+
+            <DockPanel VerticalAlignment="Center">
+                <iconPacks:PackIconMaterial Kind="Theater">
+                    <iconPacks:PackIconMaterial.Effect>
+                        <DropShadowEffect BlurRadius="10"
+                                          Opacity="0.2"
+                                          ShadowDepth="10" />
+                    </iconPacks:PackIconMaterial.Effect>
+                    <iconPacks:PackIconMaterial.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1"
+                                             StartPoint="0.5,0">
+                            <GradientStop Color="Black"
+                                          Offset="0" />
+                            <GradientStop Color="#FFC74B4B"
+                                          Offset="1" />
+                        </LinearGradientBrush>
+                    </iconPacks:PackIconMaterial.BorderBrush>
+
+                    <iconPacks:PackIconMaterial.Style>
+
+                        <Style TargetType="iconPacks:PackIconMaterial">
+                            <Setter Property="Foreground"
+                                    Value="White" />
+                            <Setter Property="Height"
+                                    Value="120" />
+                            <Setter Property="Width"
+                                    Value="120" />
+                            <Setter Property="VerticalAlignment"
+                                    Value="Center" />
+                            <Setter Property="HorizontalAlignment"
+                                    Value="Center" />
+
+                            <Style.Triggers>
+
+                                <Trigger Property="IsMouseOver"
+                                         Value="True">
+
+                                    <Setter Property="Height"
+                                            Value="135" />
+                                    <Setter Property="Width"
+                                            Value="135" />
+
+                                </Trigger>
+
+                            </Style.Triggers>
+
+                        </Style>
+
+                    </iconPacks:PackIconMaterial.Style>
+
+                </iconPacks:PackIconMaterial>
+            </DockPanel>
+
+
+
+            <StackPanel Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox FontFamily="Helvetica"
+                             FontWeight="Light"
+                             FontSize="20"
+                             Text="Kullanıcı Adı"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="30"
+                             Margin="63,0,0,2"
+                             x:Name="KullaniciTxt">
+
+                    </TextBox>
+                    <iconPacks:PackIconMaterial Kind="Account"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Foreground="White" />
+
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Margin="0,2,0,0"
+                        Background="White"
+                        Opacity="0.5" />
+
+
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,20,0,2">
+                    <PasswordBox FontFamily="Helvetica"
+                                 FontWeight="Light"
+                                 FontSize="20"
+                                 Password="Şifre"
+                                 MaxLength="15"
+                                 HorizontalAlignment="Center"
+                                 Foreground="White"
+                                 Background="Transparent"
+                                 BorderThickness="0"
+                                 Width="235"
+                                 HorizontalContentAlignment="Left"
+                                 Opacity="0.5"
+                                 Height="30"
+                                 Margin="63,0,0,0"
+                                 x:Name="SifreBx">
+
+                    </PasswordBox>
+                    <TextBox x:Name="SifreBx1"
+                             Visibility="Collapsed"
+                             FontFamily="Helvetica"
+                             FontWeight="Light"
+                             FontSize="20"
+                             HorizontalAlignment="Center"
+                             Foreground="White"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             Width="235"
+                             HorizontalContentAlignment="Left"
+                             Opacity="0.5"
+                             Height="30"
+                             Margin="63,0,0,0" />
+
+
+                    <iconPacks:PackIconMaterial Kind="Lock"
+                                                VerticalAlignment="Center"
+                                                HorizontalAlignment="Center"
+                                                Foreground="White"
+                                                x:Name="Kilit">
+
+                    </iconPacks:PackIconMaterial>
+
+                </StackPanel>
+                <Border Width="250"
+                        Height="2"
+                        Background="White"
+                        Opacity="0.5" />
+                <CheckBox Content="Şifreyi göster"
+                          Margin="65,10,65,0"
+                          Background="{x:Null}"
+                          BorderBrush="{x:Null}"
+                          Foreground="White"
+                          FontFamily="Helvetica"
+                          FontWeight="Bold"
+                          FontSize="11"
+                          Checked="SifreGoster"
+                          Unchecked="ŞifreyiGizle" />
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,30,0,0">
+                    <Button  Width="100"
+                             Height="40"
+                             Content="Giriş Yap"
+                             Margin="60,0,60,0"
+                             Background="{x:Null}"
+                             BorderThickness="2.5"
+                             Foreground="White"
+                             Click="KullaniciGiris">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              Opacity="0.2"
+                                              ShadowDepth="0" />
+                        </Button.Effect>
+                        <Button.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1"
+                                                 MappingMode="RelativeToBoundingBox"
+                                                 StartPoint="0.5,0">
+                                <GradientStop Color="#FFFDF4EA"
+                                              Offset="0.0" />
+                                <GradientStop Color="#FFF5850B"
+                                              Offset="0.8" />
+                            </LinearGradientBrush>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Button Width="100"
+                            Height="40"
+                            Content="Kayıt Ol"
+                            Background="{x:Null}"
+                            BorderThickness="2.5"
+                            Click="KayitOl">
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              Opacity="0.2"
+                                              ShadowDepth="1" />
+                        </Button.Effect>
+                        <Button.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1"
+                                                 MappingMode="RelativeToBoundingBox"
+                                                 StartPoint="0.5,0">
+                                <GradientStop Color="#FFFEFAF6"
+                                              Offset="0.7" />
+                                <GradientStop Color="#FFF05D0B"
+                                              Offset="0.0" />
+                            </LinearGradientBrush>
+                        </Button.BorderBrush>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,20,0,0">
+                    <Button  Width="200"
+                             Height="40"
+                             Content="Yönetici"
+                             Margin="90,0,0,0"
+                             BorderThickness="0"
+                             Click="YoneticiGirisBtn"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             ClipToBounds="True"
+                             BorderBrush="{x:Null}"
+                             Foreground="White"
+                             Background="#FFFF5C00" />
+
+                </StackPanel>
+
+
+            </StackPanel>
+
+
+
+
+
+
+        </Grid>
+    </Grid>
+
+</Window>

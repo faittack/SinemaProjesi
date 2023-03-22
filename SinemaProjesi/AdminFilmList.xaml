@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="SinemaProjesi.AdminFilmList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SinemaProjesi"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             Width="900"
+             Height="600"
+             Background="Transparent"
+             Loaded="TabloListele">
+
+    <Border CornerRadius="20"
+            Background="#FFFEFEFE">
+
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="2"
+                              BlurRadius="20"
+                              Opacity="0.4" />
+        </Border.Effect>
+
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="500" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <DataGrid x:Name="Sinema_Listesi"
+                          Width="850"
+                          Height="450"
+                          BorderThickness="0"
+                          Foreground="#FFF58307"
+                          Background="{x:Null}"
+                          BorderBrush="{x:Null}"
+                          IsReadOnly="True"
+                          RowHeight="50"
+                          ColumnHeaderStyle="{DynamicResource MaterialDesignDataGridColumnHeader}"
+                          CanUserAddRows="False"
+                          CanUserSortColumns="False"
+                          CanUserResizeRows="False"
+                          ColumnHeaderHeight="50"
+                          FontSize="15"
+                          FontWeight="Bold"
+                          MouseDoubleClick="Btn_SelectedIndex">
+
+                </DataGrid>
+            </Grid>
+
+
+
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Center">
+
+                <Button Style="{StaticResource menuButton}"
+                        Background="#FFF58307"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="120"
+                        Canvas.Left="650"
+                        Margin="0,24,20,26"
+                        Canvas.Top="25"
+                        Foreground="White"
+                        BorderBrush="{x:Null}"
+                        Click="FilmEkle_Clk">
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="1"
+                                          ShadowDepth="2"
+                                          Opacity="0.6" />
+                    </Button.Effect>
+                    <iconPacks:PackIconMaterial Kind="MovieCheck"
+                                                Width="30"
+                                                Height="30"
+                                                Foreground="#FFFEFEFE" />
+
+                </Button>
+
+                <Button Style="{StaticResource menuButton}"
+                        Background="#FFF58307"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="120"
+                        Canvas.Left="510"
+                        Margin="0,25,150,25"
+                        Canvas.Top="25"                  
+                        BorderBrush="{x:Null}"
+                        Click="RemoveBtnClick">
+
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="1"
+                                          ShadowDepth="2"
+                                          Opacity="0.6" />
+                    </Button.Effect>
+
+                    <iconPacks:PackIconMaterial Kind="MovieRemove"
+                                                Width="30"
+                                                Height="30"
+                                                Foreground="White" />
+
+                </Button>
+
+                <Button Style="{StaticResource menuButton}"
+                        Background="#FFF58307"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="120"
+                        Canvas.Left="510"
+                        Margin="0,25,280,25"
+                        Canvas.Top="25"
+                        Foreground="White"
+                        BorderBrush="{x:Null}"
+                        Click="EditBtnClick">
+
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="1"
+                                          ShadowDepth="2"
+                                          Opacity="0.6" />
+                    </Button.Effect>
+
+                    <iconPacks:PackIconMaterial Kind="MovieEdit"
+                                                Width="30"
+                                                Height="30"
+                                                Foreground= "White" />
+
+                </Button>
+
+                <Label Content="Film Adı :"
+                       FontFamily="Helvetica"
+                       FontWeight="Bold"
+                       FontSize="25"
+                       Foreground="#FFF58307"
+                       Background="Transparent"
+                       BorderThickness="0"
+                       Height="50"
+                       Margin="-62,25,670.2,24.2" />
+
+
+                <TextBox FontFamily="Helvetica"
+                         FontWeight="Light"
+                         FontSize="25"
+                         x:Name="FilmAdTxt"
+                         HorizontalAlignment="Center"
+                         Foreground="#FFF58307"
+                         Background="Transparent"
+                         BorderThickness="0"
+                         Width="235"
+                         HorizontalContentAlignment="Left"
+                         Opacity="0.5"
+                         Height="50"
+                         Margin="63,25,422,24.2">
+
+                </TextBox>
+
+
+            </Grid>
+
+
+
+        </Grid>
+
+    </Border>
+</UserControl>
